@@ -57,7 +57,17 @@ See the https://docs.openshift.com/container-platform/latest/networking/dns-oper
 
 == Example
 
+Configuring DNS forwarding:
+
 [source,yaml]
 ----
-namespace: example-namespace
+configs:
+  ...
+  servers:
+  - name: external-forwarding
+    zones:
+      - my-zone.external
+    forwardPlugin:
+      upstreams:
+        - 192.168.1.1
 ----
