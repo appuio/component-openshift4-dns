@@ -1,0 +1,12 @@
+applications:
+  - cilium
+
+parameters:
+  cilium:
+    cilium_helm_values:
+      localRedirectPolicy: true
+
+  openshift4_dns:
+    ciliumLocalRedirects:
+      spec:
+        cheekyStuff: true

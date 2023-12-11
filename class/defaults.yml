@@ -1,4 +1,9 @@
 parameters:
   openshift4_dns:
     =_metadata: {}
-    namespace: syn-openshift4-dns
+
+    namespace: openshift-dns
+
+    ciliumLocalRedirects:
+      enabled: true
+      spec: {}
