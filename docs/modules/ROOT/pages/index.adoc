@@ -1,0 +1,5 @@
+= Openshift4 DNS
+
+openshift4-dns is a Commodore component to manage Openshift4 DNS.
+
+See the xref:references/parameters.adoc[parameters] reference for further details.

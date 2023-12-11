@@ -1,0 +1,25 @@
+{
+  "template": "https://github.com/projectsyn/commodore-component-template.git",
+  "commit": "8b2395f87fd723628a4318f2dfba36519777ec72",
+  "checkout": "main",
+  "context": {
+    "cookiecutter": {
+      "name": "Openshift4 DNS",
+      "slug": "openshift4-dns",
+      "parameter_key": "openshift4_dns",
+      "test_cases": "defaults",
+      "add_lib": "n",
+      "add_pp": "n",
+      "add_golden": "y",
+      "add_matrix": "y",
+      "add_go_unit": "n",
+      "copyright_holder": "VSHN AG <info@vshn.ch>",
+      "copyright_year": "2023",
+      "github_owner": "appuio",
+      "github_name": "component-openshift4-dns",
+      "github_url": "https://github.com/appuio/component-openshift4-dns",
+      "_template": "https://github.com/projectsyn/commodore-component-template.git"
+    }
+  },
+  "directory": null
+}
