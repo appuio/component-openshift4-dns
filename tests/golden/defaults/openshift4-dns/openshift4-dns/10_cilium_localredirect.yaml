@@ -1,0 +1,25 @@
+apiVersion: cilium.io/v2
+kind: CiliumLocalRedirectPolicy
+metadata:
+  annotations: {}
+  labels:
+    name: dns-default
+  name: dns-default
+  namespace: openshift-dns
+spec:
+  cheekyStuff: true
+  redirectBackend:
+    localEndpointSelector:
+      matchLabels:
+        dns.operator.openshift.io/daemonset-dns: default
+    toPorts:
+      - name: dns
+        port: '5353'
+        protocol: UDP
+      - name: dns-tcp
+        port: '5353'
+        protocol: TCP
+  redirectFrontend:
+    serviceMatcher:
+      namespace: openshift-dns
+      serviceName: dns-default
