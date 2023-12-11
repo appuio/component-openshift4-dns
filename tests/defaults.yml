@@ -1,12 +1,3 @@
-applications:
-  - cilium
+# Overwrite parameters here
 
-parameters:
-  cilium:
-    cilium_helm_values:
-      localRedirectPolicy: true
-
-  openshift4_dns:
-    ciliumLocalRedirects:
-      spec:
-        cheekyStuff: true
+# parameters: {...}

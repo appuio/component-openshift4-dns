@@ -11,6 +11,27 @@ default:: `syn-openshift4-dns`
 The namespace in which to deploy this component.
 
 
+== `ciliumLocalRedirects`
+
+[horizontal]
+type:: dictionary
+default::
++
+[source,yaml]
+----
+ciliumLocalRedirects:
+  enabled: true <1>
+  spec: {} <2>
+----
+<1> enable/disable local redirects
+<2> configure additional settings
+
+If the cluster is using the cilium network plugin, this creates a `CiliumLocalRedirectPolicy` custom resource that redirects dns requests to the dns resolver pod on the same node.
+Similar to the default behaviour on OpenShift without cilium.
+
+See the https://docs.cilium.io/en/stable/network/kubernetes/local-redirect-policy/[Cilium Docs] for more information.
+
+
 == Example
 
 [source,yaml]

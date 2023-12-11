@@ -7,7 +7,7 @@
       "name": "Openshift4 DNS",
       "slug": "openshift4-dns",
       "parameter_key": "openshift4_dns",
-      "test_cases": "defaults",
+      "test_cases": "defaults localredirect",
       "add_lib": "n",
       "add_pp": "n",
       "add_golden": "y",
