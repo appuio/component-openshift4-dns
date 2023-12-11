@@ -45,7 +45,18 @@ local localRedirectCR = kube._Object('cilium.io/v2', 'CiliumLocalRedirectPolicy'
   } + com.makeMergeable(params.ciliumLocalRedirects.spec),
 };
 
+// operatorConfig
+
+local operatorConfig = kube._Object('operator.openshift.io/v1', 'DNS', 'default') {
+  metadata+: {
+    namespace: 'default',
+  },
+  spec: params.configs,
+};
+
+
 // Define outputs below
 {
   [if localRedirectEnabled then '10_cilium_localredirect']: localRedirectCR,
+  '10_operator_config': operatorConfig,
 }

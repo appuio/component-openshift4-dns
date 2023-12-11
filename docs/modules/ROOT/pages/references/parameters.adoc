@@ -31,6 +31,29 @@ Similar to the default behaviour on OpenShift without cilium.
 
 See the https://docs.cilium.io/en/stable/network/kubernetes/local-redirect-policy/[Cilium Docs] for more information.
 
+== `configs`
+
+[horizontal]
+type:: dictionary
+default::
++
+[source,yaml]
+----
+configs:
+  logLevel: Normal
+  nodePlacement:
+    tolerations:
+      - operator: Exists
+  operatorLogLevel: Normal
+  upstreamResolvers:
+    policy: Sequential
+    upstreams:
+      - port: 53
+        type: SystemResolvConf
+----
+
+See the https://docs.openshift.com/container-platform/latest/networking/dns-operator.html[OpenShift Docs] for more information.
+
 
 == Example
 
