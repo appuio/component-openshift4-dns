@@ -1,6 +1,7 @@
 parameters:
   openshift4_dns:
-    =_metadata: {}
+    =_metadata:
+      multi_tenant: true
 
     namespace: openshift-dns
 
