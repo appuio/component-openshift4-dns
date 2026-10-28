@@ -8,9 +8,16 @@ local inv = kap.inventory();
 local params = inv.parameters.openshift4_dns;
 
 // ciliumLocalRedirects
-local localRedirectEnabled = std.member(inv.applications, 'cilium') &&
-                             std.get(inv.parameters.cilium.cilium_helm_values, 'localRedirectPolicy', false) &&
-                             params.ciliumLocalRedirects.enabled;
+local localRedirectEnabled =
+  local ciliumEnabled =
+    std.get(inv.parameters.cilium.cilium_helm_values, 'localRedirectPolicy', false)
+    || std.get(
+      inv.parameters.cilium.cilium_helm_values,
+      'localRedirectPolicies',
+    ).enabled;
+  std.member(inv.applications, 'cilium') &&
+  ciliumEnabled &&
+  params.ciliumLocalRedirects.enabled;
 
 local localRedirectCR = kube._Object('cilium.io/v2', 'CiliumLocalRedirectPolicy', 'dns-default') {
   metadata+: {
