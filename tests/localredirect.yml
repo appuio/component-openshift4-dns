@@ -4,7 +4,10 @@ applications:
 parameters:
   cilium:
     cilium_helm_values:
-      localRedirectPolicy: true
+      # NOTE(sg): recent Cilium uses this Helm value to enable
+      # LocalRedirectPolicies.
+      localRedirectPolicies:
+        enabled: true
 
   openshift4_dns:
     ciliumLocalRedirects:
